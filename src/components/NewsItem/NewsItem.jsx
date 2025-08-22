@@ -8,7 +8,11 @@ function NewsItem({ item, key }) {
         style={{ backgroundImage: `url(${item.urlToImage})` }}
       ></div>
       <div className={styles.info}>
-        <h3 className={styles.title}>{item.title}</h3>
+        <h3 className={styles.title}>
+          <a href={item.url} target="_blank">
+            {item.title}
+          </a>
+        </h3>
         <p className={styles.extra}>{item.publishedAt}</p>
       </div>
     </li>
