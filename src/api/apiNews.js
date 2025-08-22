@@ -5,7 +5,10 @@ const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 export const getNews = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}`);
+    const response = await axios.get("/api/news", {
+      params: { q: "usa" },
+    });
+
     return response.data;
   } catch (error) {
     console.log(error);
