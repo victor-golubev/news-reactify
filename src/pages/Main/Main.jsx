@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import NewsBanner from "../../components/NewsBanner/NewsBanner";
 import NewsList from "../../components/NewsList/NewsList";
 import { getNews } from "../../api/apiNews";
+import Skeleton from "../../components/Skeleton/Skeleton";
 
 function Main() {
   const [news, setNews] = useState([]);
@@ -26,11 +27,16 @@ function Main() {
   return (
     <main className={styles.main}>
       {loading ? (
-        "Loading..."
+        <Skeleton count={1} type={"banner"} />
       ) : news.length > 0 ? (
         <NewsBanner item={news[0]} />
       ) : null}
-      <NewsList news={news} />
+
+      {loading ? (
+        <Skeleton count={10} type={"item"} />
+      ) : (
+        <NewsList news={news} />
+      )}
     </main>
   );
 }
