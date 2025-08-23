@@ -1,0 +1,26 @@
+.searchWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchInput {
+  width: 89%;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f2f4f5;
+  border-radius: 32px;
+  color: #090a0a;
+  border: none;
+  font-size: 16px;
+}
+
+.searchButton {
+  width: 10%;
+  border: none;
+  cursor: pointer;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
