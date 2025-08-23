@@ -1,0 +1,37 @@
+.categories {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  align-items: start;
+  justify-content: start;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  scrollbar-width: none;
+}
+
+.category {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f2f4f5;
+  border-radius: 32px;
+  color: #090a0a;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.category:disabled {
+  cursor: default;
+  background-color: #dbdbdb;
+}
+
+.active {
+  background-color: #e7e7ff;
+  color: #6b4eff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
