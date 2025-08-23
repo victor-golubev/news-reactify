@@ -1,12 +1,17 @@
 import styles from "./styles.module.css";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
+import noPhoto from "../../img/no-photo.png";
 
 function NewsItem({ item, key }) {
   return (
     <li key={key} className={styles.item}>
       <div
         className={styles.wrapper}
-        style={{ backgroundImage: `url(${item.urlToImage})` }}
+        style={
+          item.urlToImage
+            ? { backgroundImage: `url(${item.urlToImage})` }
+            : { backgroundImage: `url(${noPhoto})` }
+        }
       ></div>
       <div className={styles.info}>
         <h3 className={styles.title}>

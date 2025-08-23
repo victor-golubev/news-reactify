@@ -16,5 +16,18 @@ export const getNews = async (page = 10, pageSize = 10) => {
     return response.data;
   } catch (error) {
     console.log(error);
+    return { articles: [] };
+  }
+};
+
+export const getCategory = async (category, page = 1, pageSize = 10) => {
+  try {
+    const response = await axios.get(`${BASE_URL}`, {
+      params: { apiKey: API_KEY, q: category, page, pageSize },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return { articles: [] };
   }
 };
