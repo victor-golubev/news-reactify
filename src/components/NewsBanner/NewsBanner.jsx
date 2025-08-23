@@ -12,7 +12,7 @@ function NewsBanner({ item }) {
         </a>
       </h3>
       <p className="styles.extra">
-        {formatTimeAgo(item.published)} by {item.author}
+        {formatTimeAgo(item.publishedAt)} by {item.author}
       </p>
     </div>
   );

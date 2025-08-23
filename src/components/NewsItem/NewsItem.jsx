@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 
 function NewsItem({ item, key }) {
   return (
@@ -13,7 +14,9 @@ function NewsItem({ item, key }) {
             {item.title}
           </a>
         </h3>
-        <p className={styles.extra}>{item.publishedAt}</p>
+        <p className={styles.extra}>
+          {formatTimeAgo(item.publishedAt)} by {item.author}
+        </p>
       </div>
     </li>
   );
