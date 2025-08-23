@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 
-function SearchNews({ category, onSearch }) {
+function Search({ category, onSearch }) {
   const [value, setValue] = useState(category);
 
   const handleSearch = () => {
@@ -39,4 +39,4 @@ function SearchNews({ category, onSearch }) {
   );
 }
 
-export default SearchNews;
+export default Search;

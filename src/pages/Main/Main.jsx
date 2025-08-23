@@ -6,7 +6,7 @@ import { getNews, getCategory } from "../../api/apiNews";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import Pagination from "../../components/Pagination/Pagination";
 import Categories from "../../components/Categories/Categories";
-import SearchNews from "../../components/SearchNews/SearchNews";
+import Search from "../../components/Search/Search";
 
 const categories = [
   "All",
