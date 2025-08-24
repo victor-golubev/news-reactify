@@ -2,9 +2,9 @@ import styles from "./styles.module.css";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 import noPhoto from "../../img/no-photo.png";
 
-function NewsItem({ item, key }) {
+function NewsItem({ item }) {
   return (
-    <li key={key} className={styles.item}>
+    <li className={styles.item}>
       <div
         className={styles.wrapper}
         style={

@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-function Skeleton({ count = 1, type = "banner" }) {
+function Skeleton({ count = 10, type = "banner", direction = "column" }) {
   const items = Array(count)
     .fill()
     .map((_, index) => (
@@ -10,7 +10,11 @@ function Skeleton({ count = 1, type = "banner" }) {
       ></li>
     ));
 
-  return <ul className={count > 1 ? styles.list : ""}>{items}</ul>;
+  return (
+    <ul className={direction === "column" ? styles.columnList : styles.rowList}>
+      {items}
+    </ul>
+  );
 }
 
 export default Skeleton;

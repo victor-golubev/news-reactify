@@ -5,8 +5,8 @@ import withSkeleton from "../../helpers/hoc/withSkeleton";
 function NewsList({ news }) {
   return (
     <ul className={styles.list}>
-      {news.map((item, i) => (
-        <NewsItem item={item} key={i} />
+      {news.map((item, index) => (
+        <NewsItem item={item} key={index} />
       ))}
     </ul>
   );
