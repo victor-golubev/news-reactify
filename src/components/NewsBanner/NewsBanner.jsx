@@ -1,7 +1,6 @@
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 import styles from "./styles.module.css";
 import Image from "../Image/Image";
-import withSkeleton from "../../helpers/hoc/withSkeleton";
 
 function NewsBanner({ item }) {
   return (
@@ -19,6 +18,4 @@ function NewsBanner({ item }) {
   );
 }
 
-const NewsBannerWithSkeleton = withSkeleton(NewsBanner, "banner", 1);
-
-export default NewsBannerWithSkeleton;
+export default NewsBanner;

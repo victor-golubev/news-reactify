@@ -6,8 +6,10 @@ import { getNews, getCategory } from "../../api/apiNews";
 import Pagination from "../../components/Pagination/Pagination";
 import Categories from "../../components/Categories/Categories";
 import Search from "../../components/Search/Search";
-import { CATEGORIES, PAGE_SIZE } from "../../constants/constants";
 import useFetch from "../../helpers/hooks/useFetch";
+import LatestNews from "../../components/LatestNews/LatestNews";
+import NewsByFilters from "../../components/NewsByFilters/NewsByFilters";
+import { PAGE_SIZE } from "../../constants/constants";
 
 function Main() {
   const [category, setCategory] = useState("");
@@ -50,26 +52,15 @@ function Main() {
 
   return (
     <main className={styles.main}>
-      {!isLoading && (
-        <Categories
-          categories={CATEGORIES}
-          onClick={setCategory}
-          currentCategory={category}
-        />
-      )}
+      <LatestNews isLoading={isLoading} banners={data.articles} />
 
-      <NewsBanner
+      <NewsByFilters
         isLoading={isLoading}
-        item={data.articles?.length > 0 ? data.articles[0] : null}
+        data={data}
+        category={category}
+        setCategory={setCategory}
+        pagination={pagination}
       />
-
-      {!isLoading && <Search category={category} onSearch={setCategory} />}
-
-      {!isLoading && data.articles?.length > 0 && pagination}
-
-      <NewsList isLoading={isLoading} news={data.articles ?? []} />
-
-      {!isLoading && data.articles?.length > 0 && pagination}
     </main>
   );
 }

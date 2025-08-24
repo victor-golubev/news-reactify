@@ -9,6 +9,7 @@
   overflow-y: hidden;
   max-width: 100%;
   scrollbar-width: none;
+  scroll-behavior: smooth; /* Плавная прокрутка */
 }
 
 .category {
