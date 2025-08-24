@@ -1,67 +1,28 @@
 import styles from "./styles.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import NewsBanner from "../../components/NewsBanner/NewsBanner";
 import NewsList from "../../components/NewsList/NewsList";
 import { getNews, getCategory } from "../../api/apiNews";
-import Skeleton from "../../components/Skeleton/Skeleton";
 import Pagination from "../../components/Pagination/Pagination";
 import Categories from "../../components/Categories/Categories";
-import SearchNews from "../../components/SearchNews/SearchNews";
-
-const categories = [
-  "All",
-  "Business",
-  "Entertainment",
-  "General",
-  "Health",
-  "Science",
-  "Sports",
-  "Technology",
-];
+import Search from "../../components/Search/Search";
+import useFetch from "../../helpers/hooks/useFetch";
+import LatestNews from "../../components/LatestNews/LatestNews";
+import NewsByFilters from "../../components/NewsByFilters/NewsByFilters";
+import { PAGE_SIZE } from "../../constants/constants";
 
 function Main() {
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(10);
-  const pageSize = 10;
 
-  const fetchNews = async (currentPage) => {
-    try {
-      setLoading(true);
-      const response = await getNews(currentPage, pageSize);
-      if (response?.articles) {
-        setNews(response.articles);
-      } else {
-        setNews([]);
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const fetchCategory = async (category, currentPage) => {
-    try {
-      setLoading(true);
-      const response = await getCategory(category, currentPage, pageSize);
-      setNews(response?.articles ?? []);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (category) {
-      fetchCategory(category);
-    } else {
-      fetchNews(currentPage);
-    }
+  const fetchFunction = useCallback(() => {
+    return category
+      ? getCategory(category, currentPage, PAGE_SIZE)
+      : getNews(currentPage, PAGE_SIZE);
   }, [category, currentPage]);
+
+  const { data, error, isLoading } = useFetch(fetchFunction);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -91,31 +52,15 @@ function Main() {
 
   return (
     <main className={styles.main}>
-      {!loading && (
-        <Categories
-          categories={categories}
-          onClick={setCategory}
-          currentCategory={category}
-        />
-      )}
+      <LatestNews isLoading={isLoading} banners={data.articles} />
 
-      {loading ? (
-        <Skeleton count={1} type={"banner"} />
-      ) : news.length > 0 ? (
-        <NewsBanner item={news[0]} />
-      ) : null}
-
-      {!loading && <SearchNews category={category} onSearch={setCategory} />}
-
-      {!loading && news.length > 0 && pagination}
-
-      {loading ? (
-        <Skeleton count={10} type={"item"} />
-      ) : (
-        <NewsList news={news} />
-      )}
-
-      {!loading && news.length > 0 && pagination}
+      <NewsByFilters
+        isLoading={isLoading}
+        data={data}
+        category={category}
+        setCategory={setCategory}
+        pagination={pagination}
+      />
     </main>
   );
 }

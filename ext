@@ -1,0 +1,80 @@
+[33mcommit 02c8a26be1fb2389f0f0b3efae48c9336dbd6a33[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Merge: b91da6e b3c9a6b
+Author: Victor Golubev <gollubeff@mail.ru>
+Date:   Sat Aug 23 18:36:28 2025 +0300
+
+    Merge pull request #3 from victor-golubev/feature/r-3
+    
+    Feature/r 3
+
+[33mcommit b3c9a6b7b0bba0ee6aa5515408ba0b5023c597fa[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Sat Aug 23 18:34:28 2025 +0300
+
+    add cetegories
+
+[33mcommit 97b2970454a58e3d660e360df53f18bfdedd8cc0[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 50f13bf 547ffc7
+Author: Victor Golubev <gollubeff@mail.ru>
+Date:   Sat Aug 23 13:46:21 2025 +0300
+
+    Merge pull request #2 from victor-golubev/feature/r-2
+    
+    add pagination, change api endpoint
+
+[33mcommit 547ffc7b8326b9632835544880e7de554038f3ec[m[33m ([m[1;31morigin/feature/r-2[m[33m, [m[1;32mfeature/r-2[m[33m)[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Sat Aug 23 13:39:55 2025 +0300
+
+    add pagination, change api endpoint
+
+[33mcommit 50f13bff09c4c4edd97c64459ea0089cee9950c0[m
+Merge: 9dfe67a b91da6e
+Author: Victor Golubev <gollubeff@mail.ru>
+Date:   Sat Aug 23 12:40:51 2025 +0300
+
+    Merge pull request #1 from victor-golubev/feature/R-1
+    
+    add skeleton
+
+[33mcommit b91da6e9b2ee38ff86e1cbadefa4409be9cfd51b[m[33m ([m[1;31morigin/feature/R-1[m[33m, [m[1;32mfeature/R-1[m[33m)[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Sat Aug 23 12:25:09 2025 +0300
+
+    add skeleton
+
+[33mcommit 9dfe67a91db683a63859c4c955da1eb1cf5f21a3[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Fri Aug 22 22:14:26 2025 +0300
+
+    5
+
+[33mcommit 4fd742a79fbe9937855bc280dd772e949e1360ab[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Fri Aug 22 22:07:10 2025 +0300
+
+    4
+
+[33mcommit 50999fa69f1bc67f2ed9a430d9752d2f67fb65f5[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Fri Aug 22 21:46:28 2025 +0300
+
+    3
+
+[33mcommit 9cf8560def0554446a12c783ff4e2949780b61d4[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Fri Aug 22 21:40:36 2025 +0300
+
+    new response api
+
+[33mcommit bbba6d178cbd8ac25aafc9bdbf570c5e1fda0eff[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Fri Aug 22 21:36:31 2025 +0300
+
+    replace top-headlines with everything
+
+[33mcommit aed3fb93c545a130c55537704e8b58b4c5ffaa20[m
+Author: Gollubeff <gollubeff@gmail.com>
+Date:   Fri Aug 22 21:07:10 2025 +0300
+
+    git init
