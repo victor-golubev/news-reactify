@@ -5,9 +5,11 @@ import NewsList from "../../components/NewsList/NewsList";
 import { getNews, getCategory } from "../../api/apiNews";
 import Pagination from "../../components/Pagination/Pagination";
 import Categories from "../../components/Categories/Categories";
+
 import SearchNews from "../../components/SearchNews/SearchNews";
 import { CATEGORIES, PAGE_SIZE } from "../../constants/constants";
 import useFetch from "../../helpers/hooks/useFetch";
+
 
 function Main() {
   const [category, setCategory] = useState("");
