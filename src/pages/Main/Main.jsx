@@ -5,11 +5,9 @@ import NewsList from "../../components/NewsList/NewsList";
 import { getNews, getCategory } from "../../api/apiNews";
 import Pagination from "../../components/Pagination/Pagination";
 import Categories from "../../components/Categories/Categories";
-
-import SearchNews from "../../components/SearchNews/SearchNews";
+import Search from "../../components/Search/Search";
 import { CATEGORIES, PAGE_SIZE } from "../../constants/constants";
 import useFetch from "../../helpers/hooks/useFetch";
-
 
 function Main() {
   const [category, setCategory] = useState("");
@@ -65,7 +63,7 @@ function Main() {
         item={data.articles?.length > 0 ? data.articles[0] : null}
       />
 
-      {!isLoading && <SearchNews category={category} onSearch={setCategory} />}
+      {!isLoading && <Search category={category} onSearch={setCategory} />}
 
       {!isLoading && data.articles?.length > 0 && pagination}
 
