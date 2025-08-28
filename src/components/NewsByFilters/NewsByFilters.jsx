@@ -8,6 +8,7 @@ import useFetch from "./../../helpers/hooks/useFetch";
 import { getNews, getCategory } from "../../api/apiNews";
 import { PAGE_SIZE } from "../../constants/constants";
 import PaginationWrapper from "../PaginationWrapper/PaginationWrapper";
+import Slider from "../Slider/Slider";
 
 function NewsByFilters() {
   const [category, setCategory] = useState("");
@@ -41,11 +42,13 @@ function NewsByFilters() {
   return (
     <section className={styles.section}>
       {!isLoading && (
-        <Categories
-          categories={CATEGORIES}
-          onClick={setCategory}
-          currentCategory={category}
-        />
+        <Slider>
+          <Categories
+            categories={CATEGORIES}
+            onClick={setCategory}
+            currentCategory={category}
+          />
+        </Slider>
       )}
 
       {!isLoading && <Search category={category} onSearch={setCategory} />}
