@@ -10,3 +10,4 @@ export const CATEGORIES = [
 ];
 
 export const PAGE_SIZE = 10;
+export const LATEST_NEWS_PAGE_SIZE = 10;

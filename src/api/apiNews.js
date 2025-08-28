@@ -20,6 +20,23 @@ export const getNews = async (page = 1, pageSize = 10) => {
   }
 };
 
+export const getLatestNews = async (page = 1, pageSize = 10) => {
+  try {
+    // const response = await axios.get("/api/news", {
+    //   params: { q: "usa", page, pageSize },
+    // });
+
+    const response = await axios.get(`${BASE_URL}`, {
+      params: { q: "usa", apiKey: API_KEY, page, pageSize },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return { articles: [] };
+  }
+};
+
 export const getCategory = async (category, page = 1, pageSize = 10) => {
   try {
     const response = await axios.get(`${BASE_URL}`, {
